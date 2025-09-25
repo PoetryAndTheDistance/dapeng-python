@@ -1,13 +1,13 @@
 import baostock as bs
 import pandas as pd
 
-def query_trade_dates(start_date: str, end_date: str):
-    print('==========query_trade_dates')
+def query_all_stock(day: str):
+    print('==========query_all_stock')
     #### 登陆系统 ####
     lg = bs.login()
 
-    #### 获取交易日信息 ####
-    rs = bs.query_trade_dates(start_date=start_date, end_date=end_date)
+    #### 获取某日所有证券信息 ####
+    rs = bs.query_all_stock(day=day)
 
     #### 打印结果集 ####
     data_list = []
@@ -27,4 +27,4 @@ def query_trade_dates(start_date: str, end_date: str):
     return json_result
 
 if __name__ == '__main__':
-    query_trade_dates('2025-09-22', '2025-10-22')
+    query_all_stock('2025-09-25')
