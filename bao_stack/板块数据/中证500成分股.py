@@ -1,5 +1,6 @@
 import baostock as bs
 import pandas as pd
+import json
 
 #方法说明：通过API接口获取中证500成分股信息，更新频率：每周一更新。返回类型：pandas的DataFrame类型。
 #http://baostock.com/baostock/index.php/%E4%B8%AD%E8%AF%81500%E6%88%90%E5%88%86%E8%82%A1
@@ -27,7 +28,7 @@ def query_zz500_stocks(date: str):
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 if __name__ == '__main__':
     query_zz500_stocks(None)

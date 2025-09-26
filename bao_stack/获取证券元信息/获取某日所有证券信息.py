@@ -1,5 +1,6 @@
 import baostock as bs
 import pandas as pd
+import json
 
 #方法说明：获取指定交易日期所有股票列表。通过API接口获取证券代码及股票交易状态信息，与日K线数据同时更新。可以通过参数‘某交易日’获取数据（包括：A股、指数），数据范围同接口query_history_k_data_plus()。
 #http://baostock.com/baostock/index.php/%E5%85%B6%E5%AE%83API
@@ -27,7 +28,7 @@ def query_all_stock(day: str):
 
     #### 登出系统 ####
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 if __name__ == '__main__':
     query_all_stock('2025-09-25')

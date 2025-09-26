@@ -1,5 +1,6 @@
 import baostock as bs
 import pandas as pd
+import json
 
 #方法说明：通过API接口获取证券基本资料，可以通过参数设置获取对应证券代码、证券名称的数据。 返回类型：pandas的DataFrame类型。
 #http://baostock.com/baostock/index.php/%E8%AF%81%E5%88%B8%E5%9F%BA%E6%9C%AC%E8%B5%84%E6%96%99
@@ -27,7 +28,7 @@ def query_stock_basic(code: str, code_name: str):
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 if __name__ == '__main__':
     query_stock_basic(None, None)

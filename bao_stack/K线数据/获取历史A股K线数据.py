@@ -1,5 +1,6 @@
 import baostock as bs
 import pandas as pd
+import json
 
 #通过API接口获取A股历史（1990-12-19至当前时间）（不复权、前复权、后复权）交易数据，可以通过参数设置获取日k线、周k线、月k线，以及5分钟、15分钟、30分钟和60分钟k线数据，适合搭配均线数据进行选股和分析。返回类型：pandas的DataFrame类型。
 #http://baostock.com/baostock/index.php/A%E8%82%A1K%E7%BA%BF%E6%95%B0%E6%8D%AE
@@ -33,7 +34,7 @@ def query_history_k_data_plus_day(code: str, start_date: str, end_date: str, fre
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 #分钟
 def query_history_k_data_plus_minute(code: str, start_date: str, end_date: str, frequency: str, adjustflag: str):
@@ -64,7 +65,7 @@ def query_history_k_data_plus_minute(code: str, start_date: str, end_date: str, 
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 #周月线
 def query_history_k_data_plus_week_moon(code: str, start_date: str, end_date: str, frequency: str, adjustflag: str):
@@ -95,7 +96,7 @@ def query_history_k_data_plus_week_moon(code: str, start_date: str, end_date: st
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 if __name__ == '__main__':
     query_history_k_data_plus_day(code='sh.600000', start_date=None, end_date=None, frequency = 'd', adjustflag = '2')

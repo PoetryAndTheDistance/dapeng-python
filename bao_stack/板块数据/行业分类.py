@@ -1,5 +1,6 @@
 import baostock as bs
 import pandas as pd
+import json
 
 #方法说明：通过API接口获取行业分类信息，更新频率：每周一更新。返回类型：pandas的DataFrame类型。
 #http://baostock.com/baostock/index.php/%E8%A1%8C%E4%B8%9A%E5%88%86%E7%B1%BB
@@ -27,7 +28,7 @@ def query_stock_industry(code: str, date: str):
 
     # 登出系统
     bs.logout()
-    return json_result
+    return json.loads(json_result)
 
 if __name__ == '__main__':
     query_stock_industry(None, None)
