@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 from bao_stack.api import bao_stack
 
 
