@@ -31,4 +31,5 @@ def query_all_stock(day: str):
     return json.loads(json_result)
 
 if __name__ == '__main__':
-    query_all_stock('2025-09-25')
+    query_all_stock(day='')
+    #query_all_stock('2025-09-25')

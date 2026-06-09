@@ -99,6 +99,7 @@ def query_history_k_data_plus_week_moon(code: str, start_date: str, end_date: st
     return json.loads(json_result)
 
 if __name__ == '__main__':
-    query_history_k_data_plus_day(code='sh.600000', start_date=None, end_date=None, frequency = 'd', adjustflag = '2')
+    query_history_k_data_plus_day(code='sz.301632', start_date=None, end_date=None, frequency = 'd', adjustflag = '2')
+    #query_history_k_data_plus_day(code='sh.603121', start_date='2025-08-01', end_date='2025-09-06', frequency = 'd', adjustflag = '2')
     #query_history_k_data_plus_minute(code='sh.600000', start_date='2024-07-01', end_date='2024-12-31', frequency = '5', adjustflag = '2')
     # query_history_k_data_plus_week_moon(code='sh.600000', start_date=None, end_date=None, frequency = 'w', adjustflag = '2')
